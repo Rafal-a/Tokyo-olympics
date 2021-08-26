@@ -1,4 +1,4 @@
-package com.thechance.tokyoolympics
+package com.thechance.tokyoolympics.data.domain
 
 data class Achievements(   val rank:Int,
                       val team :String,

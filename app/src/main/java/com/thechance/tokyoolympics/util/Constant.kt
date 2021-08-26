@@ -1,4 +1,4 @@
-package com.thechance.tokyoolympics
+package com.thechance.tokyoolympics.util
 
 object Constant {
     object ColumnIndex{

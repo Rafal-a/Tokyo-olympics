@@ -1,8 +1,10 @@
-package com.thechance.tokyoolympics
+package com.thechance.tokyoolympics.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.thechance.tokyoolympics.data.DataManager
+import com.thechance.tokyoolympics.util.CsvParser
 import com.thechance.tokyoolympics.databinding.ActivityMainBinding
 import java.io.BufferedReader
 import java.io.InputStreamReader
@@ -15,6 +17,8 @@ class MainActivity : AppCompatActivity() {
         binding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         parseCsvFile()
+        val adapter = CountryAdapter(DataManager.achievement)
+        binding.countryRecycleView.adapter=adapter
     }
 
     private fun parseCsvFile() {
@@ -27,7 +31,8 @@ class MainActivity : AppCompatActivity() {
         val buffer = BufferedReader(InputStreamReader(inputStream))
         /*lambda function that uses log to run the app in log and see the info in the csv file */
         buffer.forEachLine {
-            Log.v(LOG_TAG, it)
+            val currentMatch= parser.parse(it)
+            DataManager.addCountry(currentMatch)
         }
     }
 }

@@ -1,4 +1,6 @@
-package com.thechance.tokyoolympics
+package com.thechance.tokyoolympics.util
+
+import com.thechance.tokyoolympics.data.domain.Achievements
 
 class CsvParser {
     fun parse(line:String): Achievements {
