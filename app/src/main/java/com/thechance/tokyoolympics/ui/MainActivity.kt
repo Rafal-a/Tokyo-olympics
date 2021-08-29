@@ -1,30 +1,33 @@
 package com.thechance.tokyoolympics.ui
-
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.View
 import android.widget.SearchView
+import androidx.recyclerview.widget.RecyclerView
+import com.thechance.tokyoolympics.R
 import com.thechance.tokyoolympics.data.DataManager
 import com.thechance.tokyoolympics.util.CsvParser
 import com.thechance.tokyoolympics.databinding.ActivityMainBinding
 import java.io.BufferedReader
 import java.io.InputStreamReader
-import kotlin.random.Random
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     private val LOG_TAG = "Main_Activity"
+    private lateinit var adapter: CountryAdapter
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val recyclerView = findViewById<RecyclerView>(R.id.country_recycle_view)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         parseCsvFile()
-        val adapter = CountryAdapter(DataManager.achievement)
+        adapter = CountryAdapter(DataManager.achievement)
         binding.countryRecycleView.adapter = adapter
-        addCallBack()
+
     }
+
 
     private fun parseCsvFile() {
         //  will return inputStream and save it in buffer
@@ -40,30 +43,4 @@ class MainActivity : AppCompatActivity() {
             DataManager.addCountry(currentMatch)
         }
     }
-
-    fun addCallBack() {
-
-        binding!!.apply {
-            searchBar.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-                //click search icon in keyboard
-                override fun onQueryTextSubmit(query: String) = search(query)
-                override fun onQueryTextChange(newText: String?) = false
-            })
-            searchBar.queryHint = "Looking for Country, Type it's Name"
-        }
-    }
-
-    private fun search(country: String): Boolean {
-        binding?.apply {
-            DataManager.getSearchedCountry(country).forEach {
-                binding.countryRecycleView.toString().let {
-                  TODO()
-
-                }
-                }
-                binding?.countryRecycleView
-
-            }
-            return false
-        }
 }

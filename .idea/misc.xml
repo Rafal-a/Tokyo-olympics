@@ -5,9 +5,10 @@
       <map>
         <entry key="..\:/phoneApps/TokyoOlympics/app/src/main/res/drawable-v24/ic_bronze_medal.xml" value="0.262037037037037" />
         <entry key="..\:/phoneApps/TokyoOlympics/app/src/main/res/drawable-v24/ic_gold_medal.xml" value="0.262037037037037" />
+        <entry key="..\:/phoneApps/TokyoOlympics/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2703125" />
         <entry key="..\:/phoneApps/TokyoOlympics/app/src/main/res/drawable-v24/ic_silver_medal.xml" value="0.262037037037037" />
         <entry key="..\:/phoneApps/TokyoOlympics/app/src/main/res/drawable-v24/shape_search_bar.xml" value="0.262037037037037" />
-        <entry key="..\:/phoneApps/TokyoOlympics/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/phoneApps/TokyoOlympics/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/phoneApps/TokyoOlympics/app/src/main/res/layout/item_achievements.xml" value="0.25416666666666665" />
       </map>
     </option>
